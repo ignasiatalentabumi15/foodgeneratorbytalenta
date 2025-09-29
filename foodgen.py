@@ -73,7 +73,7 @@ class FoodGenerator:
 def get_ai_response(messages_payload, model):
     """Fungsi untuk memanggil OpenRouter API (digunakan untuk ide resep)."""
     # Ganti dengan API Key milikmu yang valid
-    api_key = "OPENROUTER_API_KEY"
+    api_key = st.secrets["OPENROUTER_API_KEY"]
 
     try:
         # Panggil API
@@ -330,4 +330,5 @@ elif st.session_state.mode == 'Beli':
 
 # Jika mode belum dipilih, tampilkan pesan selamat datang
 elif st.session_state.mode is None:
+
     st.info("Silakan pilih mode **Masak** atau **Beli** untuk memulai generator.")
